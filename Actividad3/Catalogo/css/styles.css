@@ -1,0 +1,170 @@
+:root {
+    --bg:       #080808;
+    --surface:  #0f0f0f;
+    --border:   #1e1e1e;
+    --accent:   #e8ff47;
+    --text:     #ffffff;
+    --muted:    #555;
+    --font-head: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(8, 8, 8, 0.92);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+  }
+  
+  .logo-icon { color: var(--accent); font-size: 1.1rem; }
+  .logo-text  { color: var(--text); }
+  
+  .menu {
+    display: flex;
+    gap: 2.5rem;
+  }
+  
+  .menu a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  
+  .menu a:hover { color: var(--accent); }
+  
+  .hero {
+    padding: 5rem 3rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+  }
+  
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  
+  .hero-sub {
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  
+  main {
+    flex: 1;
+    padding: 3rem;
+  }
+  
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  
+  #catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  product-card {
+    animation: fadeUp 0.5s ease both;
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  .main-footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .main-footer p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-family: var(--font-head);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+  
+  .footer-sub { font-family: var(--font-body) !important; font-size: 0.78rem !important; }
+  
+  @media (max-width: 640px) {
+    .main-header { padding: 1rem 1.5rem; }
+    .hero        { padding: 3rem 1.5rem 2rem; }
+    main         { padding: 2rem 1.5rem; }
+    .main-footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+    .menu        { gap: 1.2rem; }
+  }

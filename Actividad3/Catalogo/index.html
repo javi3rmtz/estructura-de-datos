@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechStore — Mini Catálogo</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">TechStore</span>
+    </div>
+    <nav class="menu">
+      <a href="#">Inicio</a>
+      <a href="#">Productos</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="hero-label">Componentización nativa</span>
+    <h1>Catálogo de <em>Productos</em> Tech</h1>
+    <p class="hero-sub">
+      Proyecto construido con HTML, CSS y JavaScript puro.
+      Sin frameworks. Tres métodos de componentización aplicados.
+    </p>
+  </section>
+
+  <main>
+    <p class="section-label">Productos disponibles</p>
+
+    <template id="product-template">
+      <product-card></product-card>
+    </template>
+
+    <div id="catalogo"></div>
+  </main>
+
+  <footer class="main-footer">
+    <p>◈ TechStore — Mini Catálogo Componentizado</p>
+    <p class="footer-sub">Hecho con HTML · CSS · JavaScript puro</p>
+  </footer>
+
+  <script src="js/product-card.js"></script>
+  <script src="js/components.js"></script>
+
+</body>
+</html>
